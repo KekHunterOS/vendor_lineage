@@ -73,6 +73,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml
 
+# Install nhstore perm
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/com.offsec.nethunter.store.privileged.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.offsec.nethunter.store.privileged.xml
+
 # Include AOSP audio files
 include vendor/lineage/config/aosp_audio.mk
 
@@ -225,8 +229,8 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
-PRODUCT_VERSION_MAJOR = KekHunter-1
-PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAJOR = kek-17
+PRODUCT_VERSION_MINOR = 1
 PRODUCT_VERSION_MAINTENANCE := 0
 
 ifeq ($(TARGET_VENDOR_SHOW_MAINTENANCE_VERSION),true)

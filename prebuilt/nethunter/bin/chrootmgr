@@ -286,8 +286,8 @@ if [ ! $# -eq 0 ]; then
                     #fi
                     bklog "[!] Available size of $SDCARD_PARTITION partition: $AVAILABLESIZE MB"
                     #bklog "[!] Actual content size of $TARGET_TARBALL_PATH is $TARFILESIZE MB"
-                    if [ ! $AVAILABLESIZE -gt 0 ]; then
-                        bklog "[-] Error checking space. Continuing to damage the device!"
+                    if [ ! $AVAILABLESIZE -gt 8000 ]; then
+                        bklog "[-] You don't have enough spaces for installing the chroot!!"
                         exit 1
                     fi
                     bklog "[!] Restoring the chroot backup from \"$TARGET_TARBALL_PATH\" to \"$TARGET_CHROOT_DIR_NAME\""
