@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
 	bootkali_log \
 	bootkali_login \
 	busybox \
-	nh_busybox \
+	busybox_nh \
 	changemac \
 	chrootmgr \
 	hid-keyboard \
