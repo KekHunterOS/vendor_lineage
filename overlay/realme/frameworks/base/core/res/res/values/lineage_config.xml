@@ -1,4 +1,0 @@
-<resources>
-    <!-- Whether device has VOOC charging support -->
-    <bool name="config_hasVoocCharger">true</bool>
-</resources>

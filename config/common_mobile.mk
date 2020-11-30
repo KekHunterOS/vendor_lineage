@@ -18,22 +18,24 @@ PRODUCT_PACKAGES += \
 
 # AOSP packages
 PRODUCT_PACKAGES += \
-    ExactCalculator
+    Email \
+    ExactCalculator \
+    Exchange2
 
 # Lineage packages
 PRODUCT_PACKAGES += \
     AudioFX \
     Backgrounds \
+    Eleven \
     Etar \
-    LockClock \
+    Jelly \
     Profiles \
-    TrebuchetQuickStep \
-    WeatherProvider
+    Seedvault \
+    TrebuchetQuickStep
 
 # Accents
 PRODUCT_PACKAGES += \
     LineageBlackTheme \
-    LineageDarkTheme \
     LineageBlackAccent \
     LineageBlueAccent \
     LineageBrownAccent \
@@ -49,17 +51,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Custom off-mode charger
-ifeq ($(WITH_LINEAGE_CHARGER),true)
-PRODUCT_PACKAGES += \
-    lineage_charger_res_images \
-    font_log.png \
-    libhealthd.lineage
-endif
-
 # Customizations
 PRODUCT_PACKAGES += \
-    LineageNavigationBarNoHint
+    IconShapeSquareOverlay \
+    LineageNavigationBarNoHint \
+    NavigationBarMode2ButtonOverlay
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
