@@ -5,14 +5,12 @@
 # Apps
 PRODUCT_PACKAGES += \
 	kekhunter \
-	kekterm \
-	kex
+	kekterm
+#	kex
 
-# NHStore stufff
-PRODUCT_PACKAGES += \
-	nhstore \
-	nhsotrepriv \
-	nhstoreprivperms
+# KekStore stufff
+#PRODUCT_PACKAGES += \
+#	
 
 # Binaries NH
 PRODUCT_PACKAGES += \
@@ -23,12 +21,22 @@ PRODUCT_PACKAGES += \
 	bootkali_log \
 	bootkali_login \
 	busybox_nh \
+	changemac \
 	chrootmgr \
+	duckyconventer \
 	hid-keyboard \
 	killkali \
+	macchanger \
 	setHID \
-	usbarmory
+	usbarmory \
+	usbtethering
 
 # Binaries 3party
 PRODUCT_PACKAGES += \
-	
+	ifrename \
+	iwconfig \
+	iwevent \
+	iwgetid \
+	iwlist \
+	iwpriv \
+	iwspy

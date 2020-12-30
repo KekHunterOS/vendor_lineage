@@ -23,39 +23,8 @@ LOCAL_DEX_PREOPT := false
 include $(BUILD_PREBUILT)
 
 #
-# Nethunter store stuff
+# KekStore store stuff (Coming soon enough)
 #
-
-# Nethunter store priv | https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-project/-/blob/master/nethunter-installer/update/system/etc/permissions/com.offsec.nethunter.store.privileged.xml
-include $(CLEAR_VARS)
-LOCAL_MODULE := nethunter-installer_update_system_etc_permissions_com.offsec.nethunter.store.privileged.xml
-LOCAL_SRC_FILES := permissions/$(LOCAL_MODULE)
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
-include $(BUILD_PREBUILT)
-
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := nethunter_store_privileged
-LOCAL_SRC_FILES := apk/nethunter_store_privileged.apk.apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_PRIVILEGED_MODULE := true
-LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_DEX_PREOPT := false
-LOCAL_REQUIRED_MODULES := nethunter-installer_update_system_etc_permissions_com.offsec.nethunter.store.privileged.xml
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := NetHunterStore
-LOCAL_SRC_FILES := apk/$(LOCAL_MODULE).apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_REQUIRED_MODULES := nethunter_store_privileged
-LOCAL_DEX_PREOPT := false
-include $(BUILD_PREBUILT)
 
 #
 # Binaries of kekhunter/kekhunter
