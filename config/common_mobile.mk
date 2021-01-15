@@ -27,6 +27,7 @@ PRODUCT_PACKAGES += \
     Etar \
     LockClock \
     Profiles \
+    Seedvault \
     TrebuchetQuickStep \
     WeatherProvider
 

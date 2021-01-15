@@ -21,6 +21,8 @@ else
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys
+
 # KekHunterOS
 -include vendor/lineage/config/kekhunter.mk
 
@@ -28,8 +30,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/lineage/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/lineage/prebuilt/common/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh \
-    vendor/lineage/prebuilt/common/bin/addon.d.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/addon.d.sh
+    vendor/lineage/prebuilt/common/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
@@ -74,10 +75,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml
 
-# Install nhstore perm
-PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/com.offsec.nethunter.store.privileged.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.offsec.nethunter.store.privileged.xml
-
 # Include AOSP audio files
 include vendor/lineage/config/aosp_audio.mk
 
@@ -104,6 +101,10 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
+
+# Bootanimation
+PRODUCT_PACKAGES += \
+    bootanimation.zip
 
 # AOSP packages
 PRODUCT_PACKAGES += \
@@ -213,7 +214,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/common
-ifeq ($(PRODUCT_GMS_CLIENTID_BASE), android-realme)
+ifneq ($(filter android-oppo android-realme,$(PRODUCT_GMS_CLIENTID_BASE)),)
 DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/realme
 endif
 
